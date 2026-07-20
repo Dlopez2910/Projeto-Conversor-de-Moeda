@@ -88,12 +88,13 @@ section {
     gap: 12px;
 }
 
-.currency {
-    color: #777777;
-    font-size: 14px;
+.currency-value-real {
+    color: #555555;
+    font-size: 20px;
+    font-weight: 700;
 }
 
-.value {
+.currency-value-dolar {
     color: #555555;
     font-size: 20px;
     font-weight: 700;
