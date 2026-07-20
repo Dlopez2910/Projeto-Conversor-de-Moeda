@@ -1,20 +1,49 @@
 const convertButton = document.querySelector('.convert-button');
+const currencySelect = document.querySelector('.currency-select');
 
 function convertvalues() {
     const inputCurrencyValue = document.querySelector('.input-currency').value;
     const currencyValueReal = document.querySelector('.currency-value-real');
-    const currencyValueDolar = document.querySelector('.currency-value-dolar');
+    const currencyValueDolar = document.querySelector('.currency-value-converted');
+    const currencyValueEuro = document.querySelector('.currency-value-converted');
+    const currencyValueBitcoin = document.querySelector('.currency-value-converted');
+
+
 
     const dolarToday = 5.2;
+    const euroToday = 6.2;
+    const cotacaoBitcoin = 1.2;
 
 
 
-    const convertedDolarValue = inputCurrencyValue / dolarToday;
 
-    currencyValueReal.innerHTML = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(inputCurrencyValue);
-    currencyValueDolar.innerHTML = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(convertedDolarValue);
+    if (currencySelect.value == "USD") {
 
-    console.log(convertedDolarValue);
+        currencyValueConverted.innerHTML = new Intl.NumberFormat('en-US',
+            { style: 'currency', currency: 'USD' })
+            .format(inputCurrencyValue / dolarToday);
+    }
+
+
+    if (currencySelect.value == "EUR") {
+        currencyValueConverted.innerHTML = new Intl.NumberFormat('de-DE',
+            { style: 'currency', currency: 'EUR' })
+            .format(inputCurrencyValue / euroToday);
+    }
+
+    if (currencySelect.value == "BTC") {
+        currencyValueConverted.innerHTML = new Intl.NumberFormat('en-US',
+            { style: 'currency', currency: 'BTC' })
+            .format(inputCurrencyValue / cotacaoBitcoin);
+    }
+
+
+
+    currencyValueReal.innerHTML = new Intl.NumberFormat('pt-BR',
+        { style: 'currency', currency: 'BRL' })
+        .format(inputCurrencyValue);
+
+
 
 }
 
