@@ -45,8 +45,32 @@ function convertvalues() {
         { style: 'currency', currency: 'BRL' })
         .format(inputCurrencyValue);
 
-
+        
 
 }
 
-convertButton.addEventListener("click", convertvalues); 
+function changeCurrency() {
+
+    const currencyName = document.getElementById('currency-name');
+    const currencyImage = document.querySelector('.currency-img');
+
+    if (currencySelect.value == "USD") {
+        currencyName.innerHTML = "US$ Dólar Americano";
+        currencyImage.src = "./img/estados-unidos (1) 1.png";
+        
+    }
+    if (currencySelect.value == "EUR") {
+        currencyName.innerHTML = "€ Euro";
+        currencyImage.src = "./img/Design sem nome 3.png";
+    }
+    if (currencySelect.value == "BTC") {
+        currencyName.innerHTML = "(₿) Bitcoin";
+        currencyImage.src = "./img/bitcoin 1.png";
+    }
+
+    convertvalues()
+
+}
+
+currencySelect.addEventListener("change", changeCurrency);
+convertButton.addEventListener("click", convertvalues);
