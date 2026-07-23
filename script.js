@@ -1,5 +1,7 @@
 const convertButton = document.querySelector('.convert-button');
 const currencySelect = document.querySelector('.currency-select');
+const currencyValueConverted = document.querySelector('.currency-value-converted');
+
 
 function convertvalues() {
     const inputCurrencyValue = document.querySelector('.input-currency').value;
@@ -12,7 +14,7 @@ function convertvalues() {
 
     const dolarToday = 5.2;
     const euroToday = 6.2;
-    const cotacaoBitcoin = 1.2;
+    const bitcoinToday = 1.2;
 
 
 
@@ -34,7 +36,7 @@ function convertvalues() {
     if (currencySelect.value == "BTC") {
         currencyValueConverted.innerHTML = new Intl.NumberFormat('en-US',
             { style: 'currency', currency: 'BTC' })
-            .format(inputCurrencyValue / cotacaoBitcoin);
+            .format(inputCurrencyValue / bitcoinToday);
     }
 
 
